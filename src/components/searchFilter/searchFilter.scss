@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.searchFilter {
+    display: flex;
+    align-items: center;
+    // padding-top: 300px;
+    background-color: $bg-success;
+    width: 100%;
+    height: 76px;
+    div {
+        margin-left: 200px;
+    }
+    a {
+        text-decoration: none;
+        font-size: 14px;
+        padding: 8px 16px;
+        border-radius: 2px;
+        border: solid 1px $border-secundary;
+        color: $text-dark;
+    }
+    .filter {
+        font-weight: 600;
+    }
+    .relevance {
+        font-weight: 700;
+    }
+    span {
+        font-size: 16px;
+        margin: 0 5px 0 15px;
+    }
+}

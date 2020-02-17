@@ -1,0 +1,139 @@
+@import "../../styles/variables";
+
+.formFilterCourses {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    color: $text-dark;
+}
+
+.titleFilter {
+    border: solid 1px #e6e8ec;
+    padding-left: 20px;
+    color: $text-main;
+}
+
+.subtitleFilter {
+    border: solid 1px #e6e8ec;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.subtitles {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: $text-main;
+    font-size: 15px;
+}
+
+.selectItem {
+    padding-left: 20px;
+    font-size: 13px;
+}
+.viewMore {
+    font-size: 13px;
+    color: #38a6ee;
+}
+
+.radio {
+    display: flex;
+    flex-direction: column;
+}
+
+/* radio button */
+input[type="radio"] {
+    display: none;
+    & + label {
+        position: relative;
+        display: inline-block;
+        padding-left: 24px;
+        margin-right: 32px;
+        cursor: pointer;
+        line-height: 16px;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 10px;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            color: $grey2;
+            font-family: Times;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+    }
+}
+input[type="radio"] + label {
+    &:before {
+        box-shadow: inset 0 0 0 1px $grey9, inset 0 0 0 16px $grey1,
+            inset 0 0 0 16px $blue6;
+    }
+    &:hover {
+        color: $blue6;
+    }
+    &:hover:before {
+        //transition: all .3s ease;
+        animation-duration: 0.5s;
+        animation-name: change-size;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        box-shadow: inset 0 0 0 1px $blue6, inset 0 0 0 16px $grey1,
+            inset 0 0 0 16px $blue6;
+    }
+}
+input[type="radio"]:checked + label {
+    &:hover {
+        color: $grey12;
+        cursor: default;
+    }
+    &:before {
+        //transition: all .3s ease;
+        animation-duration: 0.2s;
+        animation-name: select-radio;
+        animation-iteration-count: 1;
+        animation-direction: Normal;
+        box-shadow: inset 0 0 0 1px $blue6, inset 0 0 0 3px $grey1,
+            inset 0 0 0 16px $blue6;
+    }
+}
+
+@keyframes change-size {
+    from {
+        box-shadow: 0 0 0 0 $blue6, inset 0 0 0 1px $blue6,
+            inset 0 0 0 16px $grey1, inset 0 0 0 16px $blue6;
+    }
+
+    to {
+        box-shadow: 0 0 0 1px $blue6, inset 0 0 0 1px $blue6,
+            inset 0 0 0 16px $grey1, inset 0 0 0 16px $blue6;
+    }
+}
+
+@keyframes select-radio {
+    0% {
+        box-shadow: 0 0 0 0 $blue3, inset 0 0 0 2px $grey1,
+            inset 0 0 0 3px $blue6, inset 0 0 0 16px $grey1,
+            inset 0 0 0 16px $blue6;
+    }
+
+    90% {
+        box-shadow: 0 0 0 10px $blue1, inset 0 0 0 0 $grey1,
+            inset 0 0 0 1px $blue6, inset 0 0 0 2px $grey1,
+            inset 0 0 0 16px $blue6;
+    }
+
+    100% {
+        box-shadow: 0 0 0 12px $blue1, inset 0 0 0 0 $grey1,
+            inset 0 0 0 1px $blue6, inset 0 0 0 3px $grey1,
+            inset 0 0 0 16px $blue6;
+    }
+}
+
+/* radio button */
