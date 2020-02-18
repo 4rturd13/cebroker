@@ -13,24 +13,24 @@ class App extends Component {
         },
         noFeaturedData: {
             loadingNoFeatured: false,
-            axiosErrosNoFeatured: null,
-            noFeaturedInfo: ""
+            axiosErrosNoFeatured: null
+        },
+        noFeaturedInfo: {
+            items: []
         },
         // Pagination state ==>
-        page: 1,
-        next: "",
-        previous: ""
+        page: 1
         // Pagination state <==
     };
 
     componentDidMount() {
         this.handlerQuery();
         this.handlerNoFeaturedQuery();
-        // document.addEventListener("scroll", this.loadMoreData);
+        document.addEventListener("scroll", this.loadMoreData);
     }
 
     //pagination ==>
-    /* loadMoreData = event => {
+    loadMoreData = event => {
         const {
             scrollTop,
             clientHeight,
@@ -40,7 +40,7 @@ class App extends Component {
         if (scrollTop + clientHeight >= scrollHeight - 20) {
             return this.handlerNoFeaturedQuery();
         }
-    }; */
+    };
     //pagination <==
 
     handlerQuery = async () => {
@@ -56,12 +56,8 @@ class App extends Component {
 
             this.setState({
                 featuredData: {
-                    responseInfo: query.data,
+                    responseInfo: query.data.items,
                     loading: false
-                    // featuredInfo: [].concat(
-                    //     this.state.featuredData.featuredInfo.items,
-                    //     query.data.items
-                    // )
                 }
             });
         } catch (error) {
@@ -86,9 +82,15 @@ class App extends Component {
             );
             this.setState({
                 noFeaturedData: {
-                    noFeaturedInfo: query.data.items,
                     loadingNoFeatured: false
                 },
+                noFeaturedInfo: {
+                    items: [].concat(
+                        this.state.noFeaturedInfo.items,
+                        query.data.items
+                    )
+                },
+
                 page: this.state.page + 1
             });
         } catch (error) {
@@ -102,17 +104,15 @@ class App extends Component {
     };
 
     render() {
-        console.log(this.state.page);
-        console.log(this.state.featuredData.responseInfo);
-        console.log(this.state.noFeaturedData.noFeaturedInfo);
+        console.log(this.state.noFeaturedInfo.items);
         if (
             this.state.featuredData.responseInfo &&
-            this.state.noFeaturedData.noFeaturedInfo
+            this.state.noFeaturedInfo.items
         ) {
             return (
                 <Main
                     responseInfo={this.state.featuredData.responseInfo}
-                    noFeaturedInfo={this.state.noFeaturedData.noFeaturedInfo}
+                    noFeaturedInfo={this.state.noFeaturedInfo.items}
                 />
             );
         } else if (this.state.featuredData.loading) {
