@@ -116,9 +116,9 @@ class App extends Component {
                 />
             );
         } else if (this.state.featuredData.loading) {
-            return "Cargando";
+            return "Loading";
         } else {
-            return "vacio";
+            return "Empty";
         }
     }
 }

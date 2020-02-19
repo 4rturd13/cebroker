@@ -26,8 +26,12 @@ const Search = () => {
                 />
             </div>
             <div className="role">
-                <a href="">COURSES</a>
-                <a href="">PROVIDERS</a>
+                <a href="#" className="link-role">
+                    COURSES
+                </a>
+                <a href="#" className="link-role">
+                    PROVIDERS
+                </a>
             </div>
         </section>
     );

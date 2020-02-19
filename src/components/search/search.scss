@@ -40,15 +40,19 @@
         background-color: $bg-light;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
     }
-    //FIXME: COURSE -PROVIDER select bar bottom
     .role {
-        font-size: 14px;
-        display: flex;
-        justify-content: flex-end;
-        a {
+        .link-role {
+            font-size: 13px;
             text-decoration: none;
             color: $text-light;
-            padding: 20px 8px;
+            opacity: 0.5;
+            padding: 30px 10px 20px;
+            display: inline-block;
+            text-decoration: none;
+            &:hover {
+                box-shadow: inset 0 -3px 0 $active;
+                opacity: 1;
+            }
         }
     }
 }
