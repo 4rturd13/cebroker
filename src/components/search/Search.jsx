@@ -1,19 +1,21 @@
 import React from "react";
 import "./search.scss";
-// import searchIcon from "../../img/searchIcon.svg";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const Search = () => {
     return (
         <section className="search">
             <div>
                 <span>
-                    Find CE for a{" "}
-                    <a href="">
-                        Florida <ion-icon name="caret-down-outline"></ion-icon>
+                    Find CE for a
+                    <a href="" className="text-margin">
+                        Florida <FontAwesomeIcon icon={faCaretDown} size="xs" />
                     </a>{" "}
                     <a href="">
                         Medical Doctor{" "}
-                        <ion-icon name="caret-down-outline"></ion-icon>
+                        <FontAwesomeIcon icon={faCaretDown} size="xs" />
                     </a>
                 </span>
             </div>
@@ -22,7 +24,7 @@ const Search = () => {
                     //FIXME: Icon search
                     className="search-bar"
                     type="text"
-                    placeholder="Search courses and providers"
+                    placeholder=" Search courses and providers"
                 />
             </div>
             <div className="role">

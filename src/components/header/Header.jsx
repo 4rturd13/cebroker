@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./header.scss";
 import Logo from "../../img/logo.svg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+
 class Header extends Component {
     render() {
         return (
@@ -18,7 +21,7 @@ class Header extends Component {
                         <li>
                             <a href="">
                                 Organizations{" "}
-                                <ion-icon name="caret-down-outline"></ion-icon>
+                                <FontAwesomeIcon icon={faCaretDown} size="xs" />
                             </a>
                         </li>
                         <li>
