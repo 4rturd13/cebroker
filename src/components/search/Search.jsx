@@ -1,18 +1,25 @@
 import React from "react";
 import "./search.scss";
+// import searchIcon from "../../img/searchIcon.svg";
 
 const Search = () => {
     return (
         <section className="search">
             <div>
                 <span>
-                    Find CE for a <a href="">Florida</a>{" "}
-                    <a href="">Medical Doctor</a>
+                    Find CE for a{" "}
+                    <a href="">
+                        Florida <ion-icon name="caret-down-outline"></ion-icon>
+                    </a>{" "}
+                    <a href="">
+                        Medical Doctor{" "}
+                        <ion-icon name="caret-down-outline"></ion-icon>
+                    </a>
                 </span>
             </div>
             <div>
                 <input
-                    i
+                    //FIXME: Icon search
                     className="search-bar"
                     type="text"
                     placeholder="Search courses and providers"

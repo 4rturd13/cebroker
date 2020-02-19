@@ -16,7 +16,10 @@ class Header extends Component {
                             <a href="">Plans</a>
                         </li>
                         <li>
-                            <a href="">Organizations</a>
+                            <a href="">
+                                Organizations{" "}
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </a>
                         </li>
                         <li>
                             <a href="">Browse courses</a>

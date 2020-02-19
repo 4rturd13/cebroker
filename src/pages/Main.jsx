@@ -11,7 +11,6 @@ const Main = ({ responseInfo, noFeaturedInfo }) => {
         <>
             <Header />
             <Search />
-            {/* <SearchFilter /> */}
             <section className="coursesSection">
                 <div className="alineationFilter">
                     <FilterCourses />
@@ -20,6 +19,9 @@ const Main = ({ responseInfo, noFeaturedInfo }) => {
                     <CardCourses responseInfo={responseInfo} />
                     <CardCourses responseInfo={noFeaturedInfo} />
                 </div>
+                <button className="helpBtn">
+                    <ion-icon name="help-circle-outline"></ion-icon> Help
+                </button>
             </section>
         </>
     );

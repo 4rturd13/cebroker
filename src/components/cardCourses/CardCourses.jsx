@@ -21,6 +21,8 @@ const CardsCourses = ({ responseInfo }) => {
                         {infoCourse.course.provider.name}
                     </p>
                     <div className="description">
+                        {" "}
+                        {/* FIXME: inline icon & text */}
                         <p className="numberOfHours">
                             <ion-icon name="time-outline"></ion-icon>
                             {` ${infoCourse.course.components[0].profession.totalHours} Hours`}

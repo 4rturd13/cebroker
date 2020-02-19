@@ -11,6 +11,9 @@
     border: solid 1px #e6e8ec;
     padding-left: 20px;
     color: $text-main;
+    h5 {
+        font-weight: 400;
+    }
 }
 
 .subtitleFilter {
@@ -35,6 +38,7 @@
 .viewMore {
     font-size: 13px;
     color: #38a6ee;
+    font-weight: 600;
 }
 
 .radio {
